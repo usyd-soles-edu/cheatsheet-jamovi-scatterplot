@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.45">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-07-28">
+
+<title>Scatterplots in Jamovi</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="scatterplot_jamovi_files/libs/clipboard/clipboard.min.js"></script>
+<script src="scatterplot_jamovi_files/libs/quarto-html/quarto.js"></script>
+<script src="scatterplot_jamovi_files/libs/quarto-html/popper.min.js"></script>
+<script src="scatterplot_jamovi_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="scatterplot_jamovi_files/libs/quarto-html/anchor.min.js"></script>
+<link href="scatterplot_jamovi_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="scatterplot_jamovi_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="scatterplot_jamovi_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="scatterplot_jamovi_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="scatterplot_jamovi_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="scatterplot_jamovi_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="scatterplot_jamovi_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="scatterplot_jamovi_files/libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
+<script src="scatterplot_jamovi_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="scatterplot_jamovi_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="scatterplot_jamovi_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="scatterplot_jamovi.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Scatterplots in <strong>Jamovi</strong></h1>
+<p class="subtitle lead">Cheatsheet</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 28, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Licensing
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This work was developed using resources that are available under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, made available on the <a href="https://github.com/usyd-soles-edu">SOLES Open Educational Resources</a> repository by the School of Life and Environmental Sciences, The University of Sydney.</p>
+</div>
+</div>
+</div>
+<hr>
+<section id="about" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="about"><span class="header-section-number">1</span> About</h2>
+<p>A scatterplot is a graph that shows the relationship between two variables by displaying data points on a Cartesian plane. Each point represents an observation with its position determined by the values of the two variables. Scatterplots help identify trends, clusters, and outliers in the data.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumed knowledge
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>You have Jamovi installed ideally 2.5.7.0 or later.</li>
+<li>You can follow instructions to select, click and drag elements in Jamovi.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data structure
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The data should be in a <strong>long format</strong> (also known as tidy data), where each row is an observation and each column is a variable (<a href="#fig-format" class="quarto-xref">Figure&nbsp;1</a>). If your data is not already structured this way, reshape it manually in a spreadsheet program or in R using the <code>pivot_longer()</code> function from the <code>tidyr</code> package.</p>
+<div id="fig-format" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-format-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 44.4%;justify-content: center;">
+<div class="cell">
+<div class="cell-output-display">
+<div id="uwqciqvmvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uwqciqvmvn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#uwqciqvmvn thead, #uwqciqvmvn tbody, #uwqciqvmvn tfoot, #uwqciqvmvn tr, #uwqciqvmvn td, #uwqciqvmvn th {
+  border-style: none;
+}
+
+#uwqciqvmvn p {
+  margin: 0;
+  padding: 0;
+}
+
+#uwqciqvmvn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: #D5D5D5;
+  border-right-style: solid;
+  border-right-width: 3px;
+  border-right-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #D5D5D5;
+  border-left-style: solid;
+  border-left-width: 3px;
+  border-left-color: #D5D5D5;
+}
+
+#uwqciqvmvn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#uwqciqvmvn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#uwqciqvmvn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#uwqciqvmvn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#uwqciqvmvn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+}
+
+#uwqciqvmvn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#uwqciqvmvn .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #A81600;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#uwqciqvmvn .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #A81600;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#uwqciqvmvn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#uwqciqvmvn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#uwqciqvmvn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#uwqciqvmvn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#uwqciqvmvn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#uwqciqvmvn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+  vertical-align: middle;
+}
+
+#uwqciqvmvn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#uwqciqvmvn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#uwqciqvmvn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#uwqciqvmvn .gt_stub {
+  color: #FFFFFF;
+  background-color: #929292;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uwqciqvmvn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#uwqciqvmvn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#uwqciqvmvn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#uwqciqvmvn .gt_summary_row {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uwqciqvmvn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D5D5D5;
+}
+
+#uwqciqvmvn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#uwqciqvmvn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+}
+
+#uwqciqvmvn .gt_grand_summary_row {
+  color: #FFFFFF;
+  background-color: #929292;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uwqciqvmvn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D5D5D5;
+}
+
+#uwqciqvmvn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D5D5D5;
+}
+
+#uwqciqvmvn .gt_striped {
+  background-color: #F4F4F4;
+}
+
+#uwqciqvmvn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+}
+
+#uwqciqvmvn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#uwqciqvmvn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uwqciqvmvn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#uwqciqvmvn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#uwqciqvmvn .gt_left {
+  text-align: left;
+}
+
+#uwqciqvmvn .gt_center {
+  text-align: center;
+}
+
+#uwqciqvmvn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#uwqciqvmvn .gt_font_normal {
+  font-weight: normal;
+}
+
+#uwqciqvmvn .gt_font_bold {
+  font-weight: bold;
+}
+
+#uwqciqvmvn .gt_font_italic {
+  font-style: italic;
+}
+
+#uwqciqvmvn .gt_super {
+  font-size: 65%;
+}
+
+#uwqciqvmvn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#uwqciqvmvn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#uwqciqvmvn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#uwqciqvmvn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#uwqciqvmvn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#uwqciqvmvn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#uwqciqvmvn .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="Sex" class="gt_col_heading gt_columns_bottom_border gt_left" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">Sex</th>
+<th id="BW" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">BW</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" style="text-align: left;" headers="Sex">F</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="BW">2.15</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="text-align: left;" headers="Sex">M</td>
+<td class="gt_row gt_right gt_striped" style="text-align: left;" headers="BW">2.55</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="text-align: left;" headers="Sex">F</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="BW">2.95</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="text-align: left;" headers="Sex">F</td>
+<td class="gt_row gt_right gt_striped" style="text-align: left;" headers="BW">2.70</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="text-align: left;" headers="Sex">M</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="BW">2.20</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="text-align: left;" headers="Sex">F</td>
+<td class="gt_row gt_right gt_striped" style="text-align: left;" headers="BW">1.85</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" style="text-align: left;" headers="Sex">M</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="BW">2.55</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" style="text-align: left;" headers="Sex">M</td>
+<td class="gt_row gt_right gt_striped" style="text-align: left;" headers="BW">2.60</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 11.1%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 44.4%;justify-content: center;">
+<div class="cell">
+<div class="cell-output-display">
+<div id="ffxmbotcgu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ffxmbotcgu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ffxmbotcgu thead, #ffxmbotcgu tbody, #ffxmbotcgu tfoot, #ffxmbotcgu tr, #ffxmbotcgu td, #ffxmbotcgu th {
+  border-style: none;
+}
+
+#ffxmbotcgu p {
+  margin: 0;
+  padding: 0;
+}
+
+#ffxmbotcgu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: #D5D5D5;
+  border-right-style: solid;
+  border-right-width: 3px;
+  border-right-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #D5D5D5;
+  border-left-style: solid;
+  border-left-width: 3px;
+  border-left-color: #D5D5D5;
+}
+
+#ffxmbotcgu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ffxmbotcgu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ffxmbotcgu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ffxmbotcgu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ffxmbotcgu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+}
+
+#ffxmbotcgu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ffxmbotcgu .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #A81600;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ffxmbotcgu .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #A81600;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ffxmbotcgu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ffxmbotcgu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ffxmbotcgu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ffxmbotcgu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ffxmbotcgu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ffxmbotcgu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+  vertical-align: middle;
+}
+
+#ffxmbotcgu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ffxmbotcgu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ffxmbotcgu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ffxmbotcgu .gt_stub {
+  color: #FFFFFF;
+  background-color: #929292;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffxmbotcgu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ffxmbotcgu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ffxmbotcgu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ffxmbotcgu .gt_summary_row {
+  color: #FFFFFF;
+  background-color: #5F5F5F;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffxmbotcgu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D5D5D5;
+}
+
+#ffxmbotcgu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ffxmbotcgu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+}
+
+#ffxmbotcgu .gt_grand_summary_row {
+  color: #FFFFFF;
+  background-color: #929292;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffxmbotcgu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D5D5D5;
+}
+
+#ffxmbotcgu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D5D5D5;
+}
+
+#ffxmbotcgu .gt_striped {
+  background-color: #F4F4F4;
+}
+
+#ffxmbotcgu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D5D5D5;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D5D5D5;
+}
+
+#ffxmbotcgu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ffxmbotcgu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffxmbotcgu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ffxmbotcgu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ffxmbotcgu .gt_left {
+  text-align: left;
+}
+
+#ffxmbotcgu .gt_center {
+  text-align: center;
+}
+
+#ffxmbotcgu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ffxmbotcgu .gt_font_normal {
+  font-weight: normal;
+}
+
+#ffxmbotcgu .gt_font_bold {
+  font-weight: bold;
+}
+
+#ffxmbotcgu .gt_font_italic {
+  font-style: italic;
+}
+
+#ffxmbotcgu .gt_super {
+  font-size: 65%;
+}
+
+#ffxmbotcgu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ffxmbotcgu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ffxmbotcgu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ffxmbotcgu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ffxmbotcgu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ffxmbotcgu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ffxmbotcgu .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="F" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">F</th>
+<th id="M" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: left;" data-quarto-table-cell-role="th" scope="col">M</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="F">2.15</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="M">2.55</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right gt_striped" style="text-align: left;" headers="F">2.95</td>
+<td class="gt_row gt_right gt_striped" style="text-align: left;" headers="M">2.20</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" style="text-align: left;" headers="F">2.70</td>
+<td class="gt_row gt_right" style="text-align: left;" headers="M">2.55</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right gt_striped" style="text-align: left;" headers="F">1.85</td>
+<td class="gt_row gt_right gt_striped" style="text-align: left;" headers="M">2.60</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-format-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Data should be in long format (left) where each row is an observation and each column is a variable. This is the preferred format for most statistical software. Wide format (right) is also common, but may require additional steps to analyse or visualise in some instances.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data"><span class="header-section-number">2</span> Data</h2>
+<p>For this cheatsheet we have two separate datasets. The first is part of the possums dataset used in <a href="https://www.sydney.edu.au/units/BIOL2022">BIOL2022</a> labs. Two numerical variables are available: <code>ExpBLUP</code> and <code>AactiveTBLUP</code>. The data is available in the file <code>possums-blup.csv</code>.</p>
+<p><a href="#dnldts8463" onclick="fetch('data:text/csv;base64,ImlkIiwiRXhwQkxVUCIsIkFhY3RpdmVUQkxVUCIKIjEiLDAuMzE0OTk4NDY4NDUyNjQyLDAuMzAyNDk0NzE4MDgwNzI5CiIyIiwwLjI0NTExNDkwMTQzNTk1NiwwLjM2MDYzOTQ1ODYxOTYxOQoiMyIsMC4yMTk4NzkxNjg5MDIxNTMsMC4yMDg1Njg1OTg3NDg2NzYKIjQiLDAuMjYyNTg1NzkzMTkwMTI4LC0wLjMyMTQ0MzA3NDYyNTA1MgoiNSIsLTAuMjI0NjU3OTY1NzMxNzY2LC0wLjAyMTc3NDAyNzIzMjMxMTUKIjYiLDAuMjU2NzYyMTYyNjA1NDA0LDEuMDYyODQ5MDE3NDM1NDQKIjciLC0wLjE0MTE4NTkyNzM1MDcyNCwwLjM3MTgyMTEzOTQ5MjQ4MgoiOCIsMC4yNDQ1MDQ4MTIwNTg0NDksMC42ODQ1NDU5NTM4MTg2NTMKIjkiLC0wLjIwMzMwNDY1MzU4Nzc3OSwwLjE5MDY3NzkwOTM1MjA5NAoiMTAiLC0wLjQ2MTQ4NTYwOTUxMDUzNSwtMC4yNTIxMTY2NTMyMTMyOTkKIjExIiwtMC4zMjE3MTg0NzU0NzcxNjMsMC4xMDM0NjA3OTg1NDM3NTkKIjEyIiwtMC4yMjAzOTU3MjA5OTczOTksLTAuMDUyODY2MjcwMDUzNzUxMwoiMTMiLC0wLjAyNTI4MjAyNTc3NzA2ODcsMC4wMjIwMjcxNTg5MzMyODk2CiIxNCIsLTAuNDU0MDUwMzkzMDUxMzc0LC0wLjU1NDA3NjE0MDk2NzAyNwoiMTUiLC0wLjI0MDE4NzY0NzI5MTAzLDAuMTY2MDc4MjExNDMxNzk1CiIxNiIsMC40NzAyODgyMDQ0ODkzMzcsMC44NzY5ODI1NDY3MTE1NDkKIjE3IiwtMC40MzA0MjYyNDYzOTIwMDgsLTAuMjg3ODk4MDMyMDA2NDYyCiIxOCIsLTAuNDIwNzIwMTk1NDE3NDY4LC0wLjIwNTE1MzU5MzU0NzI3MgoiMTkiLDAuMzU3NzE4OTMxNTA3MjgzLDAuNDUxMjI0MTE3MzU5MDI1CiIyMCIsMC40MTIwNTg5NzgxOTgwMzksMC4zNTg0MDMxMjI0NDUwNDYK').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'possums-blup.csv'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-primary downloadthis  " id="dnldts8463"><i class="bi bi-download"></i> possums-blup.csv </button></a></p>
+<p>The second dataset is data were collected and made available by Dr.&nbsp;Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The day may be downloaded manually but is available below as <code>penguins.csv</code>.</p>
+<p><a href="#dnldts8688" onclick="fetch('data:text/csv;base64,aW5kZXgsc3BlY2llcyxpc2xhbmQsYmlsbF9sZW5ndGhfbW0sYmlsbF9kZXB0aF9tbSxmbGlwcGVyX2xlbmd0aF9tbSxib2R5X21hc3NfZyxzZXgseWVhcg0KMSxBZGVsaWUsVG9yZ2Vyc2VuLDM5LjEsMTguNywxODEsMzc1MCxtYWxlLDIwMDcNCjIsQWRlbGllLFRvcmdlcnNlbiwzOS41LDE3LjQsMTg2LDM4MDAsZmVtYWxlLDIwMDcNCjMsQWRlbGllLFRvcmdlcnNlbiw0MC4zLDE4LDE5NSwzMjUwLGZlbWFsZSwyMDA3DQo0LEFkZWxpZSxUb3JnZXJzZW4sTkEsTkEsTkEsTkEsTkEsMjAwNw0KNSxBZGVsaWUsVG9yZ2Vyc2VuLDM2LjcsMTkuMywxOTMsMzQ1MCxmZW1hbGUsMjAwNw0KNixBZGVsaWUsVG9yZ2Vyc2VuLDM5LjMsMjAuNiwxOTAsMzY1MCxtYWxlLDIwMDcNCjcsQWRlbGllLFRvcmdlcnNlbiwzOC45LDE3LjgsMTgxLDM2MjUsZmVtYWxlLDIwMDcNCjgsQWRlbGllLFRvcmdlcnNlbiwzOS4yLDE5LjYsMTk1LDQ2NzUsbWFsZSwyMDA3DQo5LEFkZWxpZSxUb3JnZXJzZW4sMzQuMSwxOC4xLDE5MywzNDc1LE5BLDIwMDcNCjEwLEFkZWxpZSxUb3JnZXJzZW4sNDIsMjAuMiwxOTAsNDI1MCxOQSwyMDA3DQoxMSxBZGVsaWUsVG9yZ2Vyc2VuLDM3LjgsMTcuMSwxODYsMzMwMCxOQSwyMDA3DQoxMixBZGVsaWUsVG9yZ2Vyc2VuLDM3LjgsMTcuMywxODAsMzcwMCxOQSwyMDA3DQoxMyxBZGVsaWUsVG9yZ2Vyc2VuLDQxLjEsMTcuNiwxODIsMzIwMCxmZW1hbGUsMjAwNw0KMTQsQWRlbGllLFRvcmdlcnNlbiwzOC42LDIxLjIsMTkxLDM4MDAsbWFsZSwyMDA3DQoxNSxBZGVsaWUsVG9yZ2Vyc2VuLDM0LjYsMjEuMSwxOTgsNDQwMCxtYWxlLDIwMDcNCjE2LEFkZWxpZSxUb3JnZXJzZW4sMzYuNiwxNy44LDE4NSwzNzAwLGZlbWFsZSwyMDA3DQoxNyxBZGVsaWUsVG9yZ2Vyc2VuLDM4LjcsMTksMTk1LDM0NTAsZmVtYWxlLDIwMDcNCjE4LEFkZWxpZSxUb3JnZXJzZW4sNDIuNSwyMC43LDE5Nyw0NTAwLG1hbGUsMjAwNw0KMTksQWRlbGllLFRvcmdlcnNlbiwzNC40LDE4LjQsMTg0LDMzMjUsZmVtYWxlLDIwMDcNCjIwLEFkZWxpZSxUb3JnZXJzZW4sNDYsMjEuNSwxOTQsNDIwMCxtYWxlLDIwMDcNCjIxLEFkZWxpZSxCaXNjb2UsMzcuOCwxOC4zLDE3NCwzNDAwLGZlbWFsZSwyMDA3DQoyMixBZGVsaWUsQmlzY29lLDM3LjcsMTguNywxODAsMzYwMCxtYWxlLDIwMDcNCjIzLEFkZWxpZSxCaXNjb2UsMzUuOSwxOS4yLDE4OSwzODAwLGZlbWFsZSwyMDA3DQoyNCxBZGVsaWUsQmlzY29lLDM4LjIsMTguMSwxODUsMzk1MCxtYWxlLDIwMDcNCjI1LEFkZWxpZSxCaXNjb2UsMzguOCwxNy4yLDE4MCwzODAwLG1hbGUsMjAwNw0KMjYsQWRlbGllLEJpc2NvZSwzNS4zLDE4LjksMTg3LDM4MDAsZmVtYWxlLDIwMDcNCjI3LEFkZWxpZSxCaXNjb2UsNDAuNiwxOC42LDE4MywzNTUwLG1hbGUsMjAwNw0KMjgsQWRlbGllLEJpc2NvZSw0MC41LDE3LjksMTg3LDMyMDAsZmVtYWxlLDIwMDcNCjI5LEFkZWxpZSxCaXNjb2UsMzcuOSwxOC42LDE3MiwzMTUwLGZlbWFsZSwyMDA3DQozMCxBZGVsaWUsQmlzY29lLDQwLjUsMTguOSwxODAsMzk1MCxtYWxlLDIwMDcNCjMxLEFkZWxpZSxEcmVhbSwzOS41LDE2LjcsMTc4LDMyNTAsZmVtYWxlLDIwMDcNCjMyLEFkZWxpZSxEcmVhbSwzNy4yLDE4LjEsMTc4LDM5MDAsbWFsZSwyMDA3DQozMyxBZGVsaWUsRHJlYW0sMzkuNSwxNy44LDE4OCwzMzAwLGZlbWFsZSwyMDA3DQozNCxBZGVsaWUsRHJlYW0sNDAuOSwxOC45LDE4NCwzOTAwLG1hbGUsMjAwNw0KMzUsQWRlbGllLERyZWFtLDM2LjQsMTcsMTk1LDMzMjUsZmVtYWxlLDIwMDcNCjM2LEFkZWxpZSxEcmVhbSwzOS4yLDIxLjEsMTk2LDQxNTAsbWFsZSwyMDA3DQozNyxBZGVsaWUsRHJlYW0sMzguOCwyMCwxOTAsMzk1MCxtYWxlLDIwMDcNCjM4LEFkZWxpZSxEcmVhbSw0Mi4yLDE4LjUsMTgwLDM1NTAsZmVtYWxlLDIwMDcNCjM5LEFkZWxpZSxEcmVhbSwzNy42LDE5LjMsMTgxLDMzMDAsZmVtYWxlLDIwMDcNCjQwLEFkZWxpZSxEcmVhbSwzOS44LDE5LjEsMTg0LDQ2NTAsbWFsZSwyMDA3DQo0MSxBZGVsaWUsRHJlYW0sMzYuNSwxOCwxODIsMzE1MCxmZW1hbGUsMjAwNw0KNDIsQWRlbGllLERyZWFtLDQwLjgsMTguNCwxOTUsMzkwMCxtYWxlLDIwMDcNCjQzLEFkZWxpZSxEcmVhbSwzNiwxOC41LDE4NiwzMTAwLGZlbWFsZSwyMDA3DQo0NCxBZGVsaWUsRHJlYW0sNDQuMSwxOS43LDE5Niw0NDAwLG1hbGUsMjAwNw0KNDUsQWRlbGllLERyZWFtLDM3LDE2LjksMTg1LDMwMDAsZmVtYWxlLDIwMDcNCjQ2LEFkZWxpZSxEcmVhbSwzOS42LDE4LjgsMTkwLDQ2MDAsbWFsZSwyMDA3DQo0NyxBZGVsaWUsRHJlYW0sNDEuMSwxOSwxODIsMzQyNSxtYWxlLDIwMDcNCjQ4LEFkZWxpZSxEcmVhbSwzNy41LDE4LjksMTc5LDI5NzUsTkEsMjAwNw0KNDksQWRlbGllLERyZWFtLDM2LDE3LjksMTkwLDM0NTAsZmVtYWxlLDIwMDcNCjUwLEFkZWxpZSxEcmVhbSw0Mi4zLDIxLjIsMTkxLDQxNTAsbWFsZSwyMDA3DQo1MSxBZGVsaWUsQmlzY29lLDM5LjYsMTcuNywxODYsMzUwMCxmZW1hbGUsMjAwOA0KNTIsQWRlbGllLEJpc2NvZSw0MC4xLDE4LjksMTg4LDQzMDAsbWFsZSwyMDA4DQo1MyxBZGVsaWUsQmlzY29lLDM1LDE3LjksMTkwLDM0NTAsZmVtYWxlLDIwMDgNCjU0LEFkZWxpZSxCaXNjb2UsNDIsMTkuNSwyMDAsNDA1MCxtYWxlLDIwMDgNCjU1LEFkZWxpZSxCaXNjb2UsMzQuNSwxOC4xLDE4NywyOTAwLGZlbWFsZSwyMDA4DQo1NixBZGVsaWUsQmlzY29lLDQxLjQsMTguNiwxOTEsMzcwMCxtYWxlLDIwMDgNCjU3LEFkZWxpZSxCaXNjb2UsMzksMTcuNSwxODYsMzU1MCxmZW1hbGUsMjAwOA0KNTgsQWRlbGllLEJpc2NvZSw0MC42LDE4LjgsMTkzLDM4MDAsbWFsZSwyMDA4DQo1OSxBZGVsaWUsQmlzY29lLDM2LjUsMTYuNiwxODEsMjg1MCxmZW1hbGUsMjAwOA0KNjAsQWRlbGllLEJpc2NvZSwzNy42LDE5LjEsMTk0LDM3NTAsbWFsZSwyMDA4DQo2MSxBZGVsaWUsQmlzY29lLDM1LjcsMTYuOSwxODUsMzE1MCxmZW1hbGUsMjAwOA0KNjIsQWRlbGllLEJpc2NvZSw0MS4zLDIxLjEsMTk1LDQ0MDAsbWFsZSwyMDA4DQo2MyxBZGVsaWUsQmlzY29lLDM3LjYsMTcsMTg1LDM2MDAsZmVtYWxlLDIwMDgNCjY0LEFkZWxpZSxCaXNjb2UsNDEuMSwxOC4yLDE5Miw0MDUwLG1hbGUsMjAwOA0KNjUsQWRlbGllLEJpc2NvZSwzNi40LDE3LjEsMTg0LDI4NTAsZmVtYWxlLDIwMDgNCjY2LEFkZWxpZSxCaXNjb2UsNDEuNiwxOCwxOTIsMzk1MCxtYWxlLDIwMDgNCjY3LEFkZWxpZSxCaXNjb2UsMzUuNSwxNi4yLDE5NSwzMzUwLGZlbWFsZSwyMDA4DQo2OCxBZGVsaWUsQmlzY29lLDQxLjEsMTkuMSwxODgsNDEwMCxtYWxlLDIwMDgNCjY5LEFkZWxpZSxUb3JnZXJzZW4sMzUuOSwxNi42LDE5MCwzMDUwLGZlbWFsZSwyMDA4DQo3MCxBZGVsaWUsVG9yZ2Vyc2VuLDQxLjgsMTkuNCwxOTgsNDQ1MCxtYWxlLDIwMDgNCjcxLEFkZWxpZSxUb3JnZXJzZW4sMzMuNSwxOSwxOTAsMzYwMCxmZW1hbGUsMjAwOA0KNzIsQWRlbGllLFRvcmdlcnNlbiwzOS43LDE4LjQsMTkwLDM5MDAsbWFsZSwyMDA4DQo3MyxBZGVsaWUsVG9yZ2Vyc2VuLDM5LjYsMTcuMiwxOTYsMzU1MCxmZW1hbGUsMjAwOA0KNzQsQWRlbGllLFRvcmdlcnNlbiw0NS44LDE4LjksMTk3LDQxNTAsbWFsZSwyMDA4DQo3NSxBZGVsaWUsVG9yZ2Vyc2VuLDM1LjUsMTcuNSwxOTAsMzcwMCxmZW1hbGUsMjAwOA0KNzYsQWRlbGllLFRvcmdlcnNlbiw0Mi44LDE4LjUsMTk1LDQyNTAsbWFsZSwyMDA4DQo3NyxBZGVsaWUsVG9yZ2Vyc2VuLDQwLjksMTYuOCwxOTEsMzcwMCxmZW1hbGUsMjAwOA0KNzgsQWRlbGllLFRvcmdlcnNlbiwzNy4yLDE5LjQsMTg0LDM5MDAsbWFsZSwyMDA4DQo3OSxBZGVsaWUsVG9yZ2Vyc2VuLDM2LjIsMTYuMSwxODcsMzU1MCxmZW1hbGUsMjAwOA0KODAsQWRlbGllLFRvcmdlcnNlbiw0Mi4xLDE5LjEsMTk1LDQwMDAsbWFsZSwyMDA4DQo4MSxBZGVsaWUsVG9yZ2Vyc2VuLDM0LjYsMTcuMiwxODksMzIwMCxmZW1hbGUsMjAwOA0KODIsQWRlbGllLFRvcmdlcnNlbiw0Mi45LDE3LjYsMTk2LDQ3MDAsbWFsZSwyMDA4DQo4MyxBZGVsaWUsVG9yZ2Vyc2VuLDM2LjcsMTguOCwxODcsMzgwMCxmZW1hbGUsMjAwOA0KODQsQWRlbGllLFRvcmdlcnNlbiwzNS4xLDE5LjQsMTkzLDQyMDAsbWFsZSwyMDA4DQo4NSxBZGVsaWUsRHJlYW0sMzcuMywxNy44LDE5MSwzMzUwLGZlbWFsZSwyMDA4DQo4NixBZGVsaWUsRHJlYW0sNDEuMywyMC4zLDE5NCwzNTUwLG1hbGUsMjAwOA0KODcsQWRlbGllLERyZWFtLDM2LjMsMTkuNSwxOTAsMzgwMCxtYWxlLDIwMDgNCjg4LEFkZWxpZSxEcmVhbSwzNi45LDE4LjYsMTg5LDM1MDAsZmVtYWxlLDIwMDgNCjg5LEFkZWxpZSxEcmVhbSwzOC4zLDE5LjIsMTg5LDM5NTAsbWFsZSwyMDA4DQo5MCxBZGVsaWUsRHJlYW0sMzguOSwxOC44LDE5MCwzNjAwLGZlbWFsZSwyMDA4DQo5MSxBZGVsaWUsRHJlYW0sMzUuNywxOCwyMDIsMzU1MCxmZW1hbGUsMjAwOA0KOTIsQWRlbGllLERyZWFtLDQxLjEsMTguMSwyMDUsNDMwMCxtYWxlLDIwMDgNCjkzLEFkZWxpZSxEcmVhbSwzNCwxNy4xLDE4NSwzNDAwLGZlbWFsZSwyMDA4DQo5NCxBZGVsaWUsRHJlYW0sMzkuNiwxOC4xLDE4Niw0NDUwLG1hbGUsMjAwOA0KOTUsQWRlbGllLERyZWFtLDM2LjIsMTcuMywxODcsMzMwMCxmZW1hbGUsMjAwOA0KOTYsQWRlbGllLERyZWFtLDQwLjgsMTguOSwyMDgsNDMwMCxtYWxlLDIwMDgNCjk3LEFkZWxpZSxEcmVhbSwzOC4xLDE4LjYsMTkwLDM3MDAsZmVtYWxlLDIwMDgNCjk4LEFkZWxpZSxEcmVhbSw0MC4zLDE4LjUsMTk2LDQzNTAsbWFsZSwyMDA4DQo5OSxBZGVsaWUsRHJlYW0sMzMuMSwxNi4xLDE3OCwyOTAwLGZlbWFsZSwyMDA4DQoxMDAsQWRlbGllLERyZWFtLDQzLjIsMTguNSwxOTIsNDEwMCxtYWxlLDIwMDgNCjEwMSxBZGVsaWUsQmlzY29lLDM1LDE3LjksMTkyLDM3MjUsZmVtYWxlLDIwMDkNCjEwMixBZGVsaWUsQmlzY29lLDQxLDIwLDIwMyw0NzI1LG1hbGUsMjAwOQ0KMTAzLEFkZWxpZSxCaXNjb2UsMzcuNywxNiwxODMsMzA3NSxmZW1hbGUsMjAwOQ0KMTA0LEFkZWxpZSxCaXNjb2UsMzcuOCwyMCwxOTAsNDI1MCxtYWxlLDIwMDkNCjEwNSxBZGVsaWUsQmlzY29lLDM3LjksMTguNiwxOTMsMjkyNSxmZW1hbGUsMjAwOQ0KMTA2LEFkZWxpZSxCaXNjb2UsMzkuNywxOC45LDE4NCwzNTUwLG1hbGUsMjAwOQ0KMTA3LEFkZWxpZSxCaXNjb2UsMzguNiwxNy4yLDE5OSwzNzUwLGZlbWFsZSwyMDA5DQoxMDgsQWRlbGllLEJpc2NvZSwzOC4yLDIwLDE5MCwzOTAwLG1hbGUsMjAwOQ0KMTA5LEFkZWxpZSxCaXNjb2UsMzguMSwxNywxODEsMzE3NSxmZW1hbGUsMjAwOQ0KMTEwLEFkZWxpZSxCaXNjb2UsNDMuMiwxOSwxOTcsNDc3NSxtYWxlLDIwMDkNCjExMSxBZGVsaWUsQmlzY29lLDM4LjEsMTYuNSwxOTgsMzgyNSxmZW1hbGUsMjAwOQ0KMTEyLEFkZWxpZSxCaXNjb2UsNDUuNiwyMC4zLDE5MSw0NjAwLG1hbGUsMjAwOQ0KMTEzLEFkZWxpZSxCaXNjb2UsMzkuNywxNy43LDE5MywzMjAwLGZlbWFsZSwyMDA5DQoxMTQsQWRlbGllLEJpc2NvZSw0Mi4yLDE5LjUsMTk3LDQyNzUsbWFsZSwyMDA5DQoxMTUsQWRlbGllLEJpc2NvZSwzOS42LDIwLjcsMTkxLDM5MDAsZmVtYWxlLDIwMDkNCjExNixBZGVsaWUsQmlzY29lLDQyLjcsMTguMywxOTYsNDA3NSxtYWxlLDIwMDkNCjExNyxBZGVsaWUsVG9yZ2Vyc2VuLDM4LjYsMTcsMTg4LDI5MDAsZmVtYWxlLDIwMDkNCjExOCxBZGVsaWUsVG9yZ2Vyc2VuLDM3LjMsMjAuNSwxOTksMzc3NSxtYWxlLDIwMDkNCjExOSxBZGVsaWUsVG9yZ2Vyc2VuLDM1LjcsMTcsMTg5LDMzNTAsZmVtYWxlLDIwMDkNCjEyMCxBZGVsaWUsVG9yZ2Vyc2VuLDQxLjEsMTguNiwxODksMzMyNSxtYWxlLDIwMDkNCjEyMSxBZGVsaWUsVG9yZ2Vyc2VuLDM2LjIsMTcuMiwxODcsMzE1MCxmZW1hbGUsMjAwOQ0KMTIyLEFkZWxpZSxUb3JnZXJzZW4sMzcuNywxOS44LDE5OCwzNTAwLG1hbGUsMjAwOQ0KMTIzLEFkZWxpZSxUb3JnZXJzZW4sNDAuMiwxNywxNzYsMzQ1MCxmZW1hbGUsMjAwOQ0KMTI0LEFkZWxpZSxUb3JnZXJzZW4sNDEuNCwxOC41LDIwMiwzODc1LG1hbGUsMjAwOQ0KMTI1LEFkZWxpZSxUb3JnZXJzZW4sMzUuMiwxNS45LDE4NiwzMDUwLGZlbWFsZSwyMDA5DQoxMjYsQWRlbGllLFRvcmdlcnNlbiw0MC42LDE5LDE5OSw0MDAwLG1hbGUsMjAwOQ0KMTI3LEFkZWxpZSxUb3JnZXJzZW4sMzguOCwxNy42LDE5MSwzMjc1LGZlbWFsZSwyMDA5DQoxMjgsQWRlbGllLFRvcmdlcnNlbiw0MS41LDE4LjMsMTk1LDQzMDAsbWFsZSwyMDA5DQoxMjksQWRlbGllLFRvcmdlcnNlbiwzOSwxNy4xLDE5MSwzMDUwLGZlbWFsZSwyMDA5DQoxMzAsQWRlbGllLFRvcmdlcnNlbiw0NC4xLDE4LDIxMCw0MDAwLG1hbGUsMjAwOQ0KMTMxLEFkZWxpZSxUb3JnZXJzZW4sMzguNSwxNy45LDE5MCwzMzI1LGZlbWFsZSwyMDA5DQoxMzIsQWRlbGllLFRvcmdlcnNlbiw0My4xLDE5LjIsMTk3LDM1MDAsbWFsZSwyMDA5DQoxMzMsQWRlbGllLERyZWFtLDM2LjgsMTguNSwxOTMsMzUwMCxmZW1hbGUsMjAwOQ0KMTM0LEFkZWxpZSxEcmVhbSwzNy41LDE4LjUsMTk5LDQ0NzUsbWFsZSwyMDA5DQoxMzUsQWRlbGllLERyZWFtLDM4LjEsMTcuNiwxODcsMzQyNSxmZW1hbGUsMjAwOQ0KMTM2LEFkZWxpZSxEcmVhbSw0MS4xLDE3LjUsMTkwLDM5MDAsbWFsZSwyMDA5DQoxMzcsQWRlbGllLERyZWFtLDM1LjYsMTcuNSwxOTEsMzE3NSxmZW1hbGUsMjAwOQ0KMTM4LEFkZWxpZSxEcmVhbSw0MC4yLDIwLjEsMjAwLDM5NzUsbWFsZSwyMDA5DQoxMzksQWRlbGllLERyZWFtLDM3LDE2LjUsMTg1LDM0MDAsZmVtYWxlLDIwMDkNCjE0MCxBZGVsaWUsRHJlYW0sMzkuNywxNy45LDE5Myw0MjUwLG1hbGUsMjAwOQ0KMTQxLEFkZWxpZSxEcmVhbSw0MC4yLDE3LjEsMTkzLDM0MDAsZmVtYWxlLDIwMDkNCjE0MixBZGVsaWUsRHJlYW0sNDAuNiwxNy4yLDE4NywzNDc1LG1hbGUsMjAwOQ0KMTQzLEFkZWxpZSxEcmVhbSwzMi4xLDE1LjUsMTg4LDMwNTAsZmVtYWxlLDIwMDkNCjE0NCxBZGVsaWUsRHJlYW0sNDAuNywxNywxOTAsMzcyNSxtYWxlLDIwMDkNCjE0NSxBZGVsaWUsRHJlYW0sMzcuMywxNi44LDE5MiwzMDAwLGZlbWFsZSwyMDA5DQoxNDYsQWRlbGllLERyZWFtLDM5LDE4LjcsMTg1LDM2NTAsbWFsZSwyMDA5DQoxNDcsQWRlbGllLERyZWFtLDM5LjIsMTguNiwxOTAsNDI1MCxtYWxlLDIwMDkNCjE0OCxBZGVsaWUsRHJlYW0sMzYuNiwxOC40LDE4NCwzNDc1LGZlbWFsZSwyMDA5DQoxNDksQWRlbGllLERyZWFtLDM2LDE3LjgsMTk1LDM0NTAsZmVtYWxlLDIwMDkNCjE1MCxBZGVsaWUsRHJlYW0sMzcuOCwxOC4xLDE5MywzNzUwLG1hbGUsMjAwOQ0KMTUxLEFkZWxpZSxEcmVhbSwzNiwxNy4xLDE4NywzNzAwLGZlbWFsZSwyMDA5DQoxNTIsQWRlbGllLERyZWFtLDQxLjUsMTguNSwyMDEsNDAwMCxtYWxlLDIwMDkNCjE1MyxHZW50b28sQmlzY29lLDQ2LjEsMTMuMiwyMTEsNDUwMCxmZW1hbGUsMjAwNw0KMTU0LEdlbnRvbyxCaXNjb2UsNTAsMTYuMywyMzAsNTcwMCxtYWxlLDIwMDcNCjE1NSxHZW50b28sQmlzY29lLDQ4LjcsMTQuMSwyMTAsNDQ1MCxmZW1hbGUsMjAwNw0KMTU2LEdlbnRvbyxCaXNjb2UsNTAsMTUuMiwyMTgsNTcwMCxtYWxlLDIwMDcNCjE1NyxHZW50b28sQmlzY29lLDQ3LjYsMTQuNSwyMTUsNTQwMCxtYWxlLDIwMDcNCjE1OCxHZW50b28sQmlzY29lLDQ2LjUsMTMuNSwyMTAsNDU1MCxmZW1hbGUsMjAwNw0KMTU5LEdlbnRvbyxCaXNjb2UsNDUuNCwxNC42LDIxMSw0ODAwLGZlbWFsZSwyMDA3DQoxNjAsR2VudG9vLEJpc2NvZSw0Ni43LDE1LjMsMjE5LDUyMDAsbWFsZSwyMDA3DQoxNjEsR2VudG9vLEJpc2NvZSw0My4zLDEzLjQsMjA5LDQ0MDAsZmVtYWxlLDIwMDcNCjE2MixHZW50b28sQmlzY29lLDQ2LjgsMTUuNCwyMTUsNTE1MCxtYWxlLDIwMDcNCjE2MyxHZW50b28sQmlzY29lLDQwLjksMTMuNywyMTQsNDY1MCxmZW1hbGUsMjAwNw0KMTY0LEdlbnRvbyxCaXNjb2UsNDksMTYuMSwyMTYsNTU1MCxtYWxlLDIwMDcNCjE2NSxHZW50b28sQmlzY29lLDQ1LjUsMTMuNywyMTQsNDY1MCxmZW1hbGUsMjAwNw0KMTY2LEdlbnRvbyxCaXNjb2UsNDguNCwxNC42LDIxMyw1ODUwLG1hbGUsMjAwNw0KMTY3LEdlbnRvbyxCaXNjb2UsNDUuOCwxNC42LDIxMCw0MjAwLGZlbWFsZSwyMDA3DQoxNjgsR2VudG9vLEJpc2NvZSw0OS4zLDE1LjcsMjE3LDU4NTAsbWFsZSwyMDA3DQoxNjksR2VudG9vLEJpc2NvZSw0MiwxMy41LDIxMCw0MTUwLGZlbWFsZSwyMDA3DQoxNzAsR2VudG9vLEJpc2NvZSw0OS4yLDE1LjIsMjIxLDYzMDAsbWFsZSwyMDA3DQoxNzEsR2VudG9vLEJpc2NvZSw0Ni4yLDE0LjUsMjA5LDQ4MDAsZmVtYWxlLDIwMDcNCjE3MixHZW50b28sQmlzY29lLDQ4LjcsMTUuMSwyMjIsNTM1MCxtYWxlLDIwMDcNCjE3MyxHZW50b28sQmlzY29lLDUwLjIsMTQuMywyMTgsNTcwMCxtYWxlLDIwMDcNCjE3NCxHZW50b28sQmlzY29lLDQ1LjEsMTQuNSwyMTUsNTAwMCxmZW1hbGUsMjAwNw0KMTc1LEdlbnRvbyxCaXNjb2UsNDYuNSwxNC41LDIxMyw0NDAwLGZlbWFsZSwyMDA3DQoxNzYsR2VudG9vLEJpc2NvZSw0Ni4zLDE1LjgsMjE1LDUwNTAsbWFsZSwyMDA3DQoxNzcsR2VudG9vLEJpc2NvZSw0Mi45LDEzLjEsMjE1LDUwMDAsZmVtYWxlLDIwMDcNCjE3OCxHZW50b28sQmlzY29lLDQ2LjEsMTUuMSwyMTUsNTEwMCxtYWxlLDIwMDcNCjE3OSxHZW50b28sQmlzY29lLDQ0LjUsMTQuMywyMTYsNDEwMCxOQSwyMDA3DQoxODAsR2VudG9vLEJpc2NvZSw0Ny44LDE1LDIxNSw1NjUwLG1hbGUsMjAwNw0KMTgxLEdlbnRvbyxCaXNjb2UsNDguMiwxNC4zLDIxMCw0NjAwLGZlbWFsZSwyMDA3DQoxODIsR2VudG9vLEJpc2NvZSw1MCwxNS4zLDIyMCw1NTUwLG1hbGUsMjAwNw0KMTgzLEdlbnRvbyxCaXNjb2UsNDcuMywxNS4zLDIyMiw1MjUwLG1hbGUsMjAwNw0KMTg0LEdlbnRvbyxCaXNjb2UsNDIuOCwxNC4yLDIwOSw0NzAwLGZlbWFsZSwyMDA3DQoxODUsR2VudG9vLEJpc2NvZSw0NS4xLDE0LjUsMjA3LDUwNTAsZmVtYWxlLDIwMDcNCjE4NixHZW50b28sQmlzY29lLDU5LjYsMTcsMjMwLDYwNTAsbWFsZSwyMDA3DQoxODcsR2VudG9vLEJpc2NvZSw0OS4xLDE0LjgsMjIwLDUxNTAsZmVtYWxlLDIwMDgNCjE4OCxHZW50b28sQmlzY29lLDQ4LjQsMTYuMywyMjAsNTQwMCxtYWxlLDIwMDgNCjE4OSxHZW50b28sQmlzY29lLDQyLjYsMTMuNywyMTMsNDk1MCxmZW1hbGUsMjAwOA0KMTkwLEdlbnRvbyxCaXNjb2UsNDQuNCwxNy4zLDIxOSw1MjUwLG1hbGUsMjAwOA0KMTkxLEdlbnRvbyxCaXNjb2UsNDQsMTMuNiwyMDgsNDM1MCxmZW1hbGUsMjAwOA0KMTkyLEdlbnRvbyxCaXNjb2UsNDguNywxNS43LDIwOCw1MzUwLG1hbGUsMjAwOA0KMTkzLEdlbnRvbyxCaXNjb2UsNDIuNywxMy43LDIwOCwzOTUwLGZlbWFsZSwyMDA4DQoxOTQsR2VudG9vLEJpc2NvZSw0OS42LDE2LDIyNSw1NzAwLG1hbGUsMjAwOA0KMTk1LEdlbnRvbyxCaXNjb2UsNDUuMywxMy43LDIxMCw0MzAwLGZlbWFsZSwyMDA4DQoxOTYsR2VudG9vLEJpc2NvZSw0OS42LDE1LDIxNiw0NzUwLG1hbGUsMjAwOA0KMTk3LEdlbnRvbyxCaXNjb2UsNTAuNSwxNS45LDIyMiw1NTUwLG1hbGUsMjAwOA0KMTk4LEdlbnRvbyxCaXNjb2UsNDMuNiwxMy45LDIxNyw0OTAwLGZlbWFsZSwyMDA4DQoxOTksR2VudG9vLEJpc2NvZSw0NS41LDEzLjksMjEwLDQyMDAsZmVtYWxlLDIwMDgNCjIwMCxHZW50b28sQmlzY29lLDUwLjUsMTUuOSwyMjUsNTQwMCxtYWxlLDIwMDgNCjIwMSxHZW50b28sQmlzY29lLDQ0LjksMTMuMywyMTMsNTEwMCxmZW1hbGUsMjAwOA0KMjAyLEdlbnRvbyxCaXNjb2UsNDUuMiwxNS44LDIxNSw1MzAwLG1hbGUsMjAwOA0KMjAzLEdlbnRvbyxCaXNjb2UsNDYuNiwxNC4yLDIxMCw0ODUwLGZlbWFsZSwyMDA4DQoyMDQsR2VudG9vLEJpc2NvZSw0OC41LDE0LjEsMjIwLDUzMDAsbWFsZSwyMDA4DQoyMDUsR2VudG9vLEJpc2NvZSw0NS4xLDE0LjQsMjEwLDQ0MDAsZmVtYWxlLDIwMDgNCjIwNixHZW50b28sQmlzY29lLDUwLjEsMTUsMjI1LDUwMDAsbWFsZSwyMDA4DQoyMDcsR2VudG9vLEJpc2NvZSw0Ni41LDE0LjQsMjE3LDQ5MDAsZmVtYWxlLDIwMDgNCjIwOCxHZW50b28sQmlzY29lLDQ1LDE1LjQsMjIwLDUwNTAsbWFsZSwyMDA4DQoyMDksR2VudG9vLEJpc2NvZSw0My44LDEzLjksMjA4LDQzMDAsZmVtYWxlLDIwMDgNCjIxMCxHZW50b28sQmlzY29lLDQ1LjUsMTUsMjIwLDUwMDAsbWFsZSwyMDA4DQoyMTEsR2VudG9vLEJpc2NvZSw0My4yLDE0LjUsMjA4LDQ0NTAsZmVtYWxlLDIwMDgNCjIxMixHZW50b28sQmlzY29lLDUwLjQsMTUuMywyMjQsNTU1MCxtYWxlLDIwMDgNCjIxMyxHZW50b28sQmlzY29lLDQ1LjMsMTMuOCwyMDgsNDIwMCxmZW1hbGUsMjAwOA0KMjE0LEdlbnRvbyxCaXNjb2UsNDYuMiwxNC45LDIyMSw1MzAwLG1hbGUsMjAwOA0KMjE1LEdlbnRvbyxCaXNjb2UsNDUuNywxMy45LDIxNCw0NDAwLGZlbWFsZSwyMDA4DQoyMTYsR2VudG9vLEJpc2NvZSw1NC4zLDE1LjcsMjMxLDU2NTAsbWFsZSwyMDA4DQoyMTcsR2VudG9vLEJpc2NvZSw0NS44LDE0LjIsMjE5LDQ3MDAsZmVtYWxlLDIwMDgNCjIxOCxHZW50b28sQmlzY29lLDQ5LjgsMTYuOCwyMzAsNTcwMCxtYWxlLDIwMDgNCjIxOSxHZW50b28sQmlzY29lLDQ2LjIsMTQuNCwyMTQsNDY1MCxOQSwyMDA4DQoyMjAsR2VudG9vLEJpc2NvZSw0OS41LDE2LjIsMjI5LDU4MDAsbWFsZSwyMDA4DQoyMjEsR2VudG9vLEJpc2NvZSw0My41LDE0LjIsMjIwLDQ3MDAsZmVtYWxlLDIwMDgNCjIyMixHZW50b28sQmlzY29lLDUwLjcsMTUsMjIzLDU1NTAsbWFsZSwyMDA4DQoyMjMsR2VudG9vLEJpc2NvZSw0Ny43LDE1LDIxNiw0NzUwLGZlbWFsZSwyMDA4DQoyMjQsR2VudG9vLEJpc2NvZSw0Ni40LDE1LjYsMjIxLDUwMDAsbWFsZSwyMDA4DQoyMjUsR2VudG9vLEJpc2NvZSw0OC4yLDE1LjYsMjIxLDUxMDAsbWFsZSwyMDA4DQoyMjYsR2VudG9vLEJpc2NvZSw0Ni41LDE0LjgsMjE3LDUyMDAsZmVtYWxlLDIwMDgNCjIyNyxHZW50b28sQmlzY29lLDQ2LjQsMTUsMjE2LDQ3MDAsZmVtYWxlLDIwMDgNCjIyOCxHZW50b28sQmlzY29lLDQ4LjYsMTYsMjMwLDU4MDAsbWFsZSwyMDA4DQoyMjksR2VudG9vLEJpc2NvZSw0Ny41LDE0LjIsMjA5LDQ2MDAsZmVtYWxlLDIwMDgNCjIzMCxHZW50b28sQmlzY29lLDUxLjEsMTYuMywyMjAsNjAwMCxtYWxlLDIwMDgNCjIzMSxHZW50b28sQmlzY29lLDQ1LjIsMTMuOCwyMTUsNDc1MCxmZW1hbGUsMjAwOA0KMjMyLEdlbnRvbyxCaXNjb2UsNDUuMiwxNi40LDIyMyw1OTUwLG1hbGUsMjAwOA0KMjMzLEdlbnRvbyxCaXNjb2UsNDkuMSwxNC41LDIxMiw0NjI1LGZlbWFsZSwyMDA5DQoyMzQsR2VudG9vLEJpc2NvZSw1Mi41LDE1LjYsMjIxLDU0NTAsbWFsZSwyMDA5DQoyMzUsR2VudG9vLEJpc2NvZSw0Ny40LDE0LjYsMjEyLDQ3MjUsZmVtYWxlLDIwMDkNCjIzNixHZW50b28sQmlzY29lLDUwLDE1LjksMjI0LDUzNTAsbWFsZSwyMDA5DQoyMzcsR2VudG9vLEJpc2NvZSw0NC45LDEzLjgsMjEyLDQ3NTAsZmVtYWxlLDIwMDkNCjIzOCxHZW50b28sQmlzY29lLDUwLjgsMTcuMywyMjgsNTYwMCxtYWxlLDIwMDkNCjIzOSxHZW50b28sQmlzY29lLDQzLjQsMTQuNCwyMTgsNDYwMCxmZW1hbGUsMjAwOQ0KMjQwLEdlbnRvbyxCaXNjb2UsNTEuMywxNC4yLDIxOCw1MzAwLG1hbGUsMjAwOQ0KMjQxLEdlbnRvbyxCaXNjb2UsNDcuNSwxNCwyMTIsNDg3NSxmZW1hbGUsMjAwOQ0KMjQyLEdlbnRvbyxCaXNjb2UsNTIuMSwxNywyMzAsNTU1MCxtYWxlLDIwMDkNCjI0MyxHZW50b28sQmlzY29lLDQ3LjUsMTUsMjE4LDQ5NTAsZmVtYWxlLDIwMDkNCjI0NCxHZW50b28sQmlzY29lLDUyLjIsMTcuMSwyMjgsNTQwMCxtYWxlLDIwMDkNCjI0NSxHZW50b28sQmlzY29lLDQ1LjUsMTQuNSwyMTIsNDc1MCxmZW1hbGUsMjAwOQ0KMjQ2LEdlbnRvbyxCaXNjb2UsNDkuNSwxNi4xLDIyNCw1NjUwLG1hbGUsMjAwOQ0KMjQ3LEdlbnRvbyxCaXNjb2UsNDQuNSwxNC43LDIxNCw0ODUwLGZlbWFsZSwyMDA5DQoyNDgsR2VudG9vLEJpc2NvZSw1MC44LDE1LjcsMjI2LDUyMDAsbWFsZSwyMDA5DQoyNDksR2VudG9vLEJpc2NvZSw0OS40LDE1LjgsMjE2LDQ5MjUsbWFsZSwyMDA5DQoyNTAsR2VudG9vLEJpc2NvZSw0Ni45LDE0LjYsMjIyLDQ4NzUsZmVtYWxlLDIwMDkNCjI1MSxHZW50b28sQmlzY29lLDQ4LjQsMTQuNCwyMDMsNDYyNSxmZW1hbGUsMjAwOQ0KMjUyLEdlbnRvbyxCaXNjb2UsNTEuMSwxNi41LDIyNSw1MjUwLG1hbGUsMjAwOQ0KMjUzLEdlbnRvbyxCaXNjb2UsNDguNSwxNSwyMTksNDg1MCxmZW1hbGUsMjAwOQ0KMjU0LEdlbnRvbyxCaXNjb2UsNTUuOSwxNywyMjgsNTYwMCxtYWxlLDIwMDkNCjI1NSxHZW50b28sQmlzY29lLDQ3LjIsMTUuNSwyMTUsNDk3NSxmZW1hbGUsMjAwOQ0KMjU2LEdlbnRvbyxCaXNjb2UsNDkuMSwxNSwyMjgsNTUwMCxtYWxlLDIwMDkNCjI1NyxHZW50b28sQmlzY29lLDQ3LjMsMTMuOCwyMTYsNDcyNSxOQSwyMDA5DQoyNTgsR2VudG9vLEJpc2NvZSw0Ni44LDE2LjEsMjE1LDU1MDAsbWFsZSwyMDA5DQoyNTksR2VudG9vLEJpc2NvZSw0MS43LDE0LjcsMjEwLDQ3MDAsZmVtYWxlLDIwMDkNCjI2MCxHZW50b28sQmlzY29lLDUzLjQsMTUuOCwyMTksNTUwMCxtYWxlLDIwMDkNCjI2MSxHZW50b28sQmlzY29lLDQzLjMsMTQsMjA4LDQ1NzUsZmVtYWxlLDIwMDkNCjI2MixHZW50b28sQmlzY29lLDQ4LjEsMTUuMSwyMDksNTUwMCxtYWxlLDIwMDkNCjI2MyxHZW50b28sQmlzY29lLDUwLjUsMTUuMiwyMTYsNTAwMCxmZW1hbGUsMjAwOQ0KMjY0LEdlbnRvbyxCaXNjb2UsNDkuOCwxNS45LDIyOSw1OTUwLG1hbGUsMjAwOQ0KMjY1LEdlbnRvbyxCaXNjb2UsNDMuNSwxNS4yLDIxMyw0NjUwLGZlbWFsZSwyMDA5DQoyNjYsR2VudG9vLEJpc2NvZSw1MS41LDE2LjMsMjMwLDU1MDAsbWFsZSwyMDA5DQoyNjcsR2VudG9vLEJpc2NvZSw0Ni4yLDE0LjEsMjE3LDQzNzUsZmVtYWxlLDIwMDkNCjI2OCxHZW50b28sQmlzY29lLDU1LjEsMTYsMjMwLDU4NTAsbWFsZSwyMDA5DQoyNjksR2VudG9vLEJpc2NvZSw0NC41LDE1LjcsMjE3LDQ4NzUsTkEsMjAwOQ0KMjcwLEdlbnRvbyxCaXNjb2UsNDguOCwxNi4yLDIyMiw2MDAwLG1hbGUsMjAwOQ0KMjcxLEdlbnRvbyxCaXNjb2UsNDcuMiwxMy43LDIxNCw0OTI1LGZlbWFsZSwyMDA5DQoyNzIsR2VudG9vLEJpc2NvZSxOQSxOQSxOQSxOQSxOQSwyMDA5DQoyNzMsR2VudG9vLEJpc2NvZSw0Ni44LDE0LjMsMjE1LDQ4NTAsZmVtYWxlLDIwMDkNCjI3NCxHZW50b28sQmlzY29lLDUwLjQsMTUuNywyMjIsNTc1MCxtYWxlLDIwMDkNCjI3NSxHZW50b28sQmlzY29lLDQ1LjIsMTQuOCwyMTIsNTIwMCxmZW1hbGUsMjAwOQ0KMjc2LEdlbnRvbyxCaXNjb2UsNDkuOSwxNi4xLDIxMyw1NDAwLG1hbGUsMjAwOQ0KMjc3LENoaW5zdHJhcCxEcmVhbSw0Ni41LDE3LjksMTkyLDM1MDAsZmVtYWxlLDIwMDcNCjI3OCxDaGluc3RyYXAsRHJlYW0sNTAsMTkuNSwxOTYsMzkwMCxtYWxlLDIwMDcNCjI3OSxDaGluc3RyYXAsRHJlYW0sNTEuMywxOS4yLDE5MywzNjUwLG1hbGUsMjAwNw0KMjgwLENoaW5zdHJhcCxEcmVhbSw0NS40LDE4LjcsMTg4LDM1MjUsZmVtYWxlLDIwMDcNCjI4MSxDaGluc3RyYXAsRHJlYW0sNTIuNywxOS44LDE5NywzNzI1LG1hbGUsMjAwNw0KMjgyLENoaW5zdHJhcCxEcmVhbSw0NS4yLDE3LjgsMTk4LDM5NTAsZmVtYWxlLDIwMDcNCjI4MyxDaGluc3RyYXAsRHJlYW0sNDYuMSwxOC4yLDE3OCwzMjUwLGZlbWFsZSwyMDA3DQoyODQsQ2hpbnN0cmFwLERyZWFtLDUxLjMsMTguMiwxOTcsMzc1MCxtYWxlLDIwMDcNCjI4NSxDaGluc3RyYXAsRHJlYW0sNDYsMTguOSwxOTUsNDE1MCxmZW1hbGUsMjAwNw0KMjg2LENoaW5zdHJhcCxEcmVhbSw1MS4zLDE5LjksMTk4LDM3MDAsbWFsZSwyMDA3DQoyODcsQ2hpbnN0cmFwLERyZWFtLDQ2LjYsMTcuOCwxOTMsMzgwMCxmZW1hbGUsMjAwNw0KMjg4LENoaW5zdHJhcCxEcmVhbSw1MS43LDIwLjMsMTk0LDM3NzUsbWFsZSwyMDA3DQoyODksQ2hpbnN0cmFwLERyZWFtLDQ3LDE3LjMsMTg1LDM3MDAsZmVtYWxlLDIwMDcNCjI5MCxDaGluc3RyYXAsRHJlYW0sNTIsMTguMSwyMDEsNDA1MCxtYWxlLDIwMDcNCjI5MSxDaGluc3RyYXAsRHJlYW0sNDUuOSwxNy4xLDE5MCwzNTc1LGZlbWFsZSwyMDA3DQoyOTIsQ2hpbnN0cmFwLERyZWFtLDUwLjUsMTkuNiwyMDEsNDA1MCxtYWxlLDIwMDcNCjI5MyxDaGluc3RyYXAsRHJlYW0sNTAuMywyMCwxOTcsMzMwMCxtYWxlLDIwMDcNCjI5NCxDaGluc3RyYXAsRHJlYW0sNTgsMTcuOCwxODEsMzcwMCxmZW1hbGUsMjAwNw0KMjk1LENoaW5zdHJhcCxEcmVhbSw0Ni40LDE4LjYsMTkwLDM0NTAsZmVtYWxlLDIwMDcNCjI5NixDaGluc3RyYXAsRHJlYW0sNDkuMiwxOC4yLDE5NSw0NDAwLG1hbGUsMjAwNw0KMjk3LENoaW5zdHJhcCxEcmVhbSw0Mi40LDE3LjMsMTgxLDM2MDAsZmVtYWxlLDIwMDcNCjI5OCxDaGluc3RyYXAsRHJlYW0sNDguNSwxNy41LDE5MSwzNDAwLG1hbGUsMjAwNw0KMjk5LENoaW5zdHJhcCxEcmVhbSw0My4yLDE2LjYsMTg3LDI5MDAsZmVtYWxlLDIwMDcNCjMwMCxDaGluc3RyYXAsRHJlYW0sNTAuNiwxOS40LDE5MywzODAwLG1hbGUsMjAwNw0KMzAxLENoaW5zdHJhcCxEcmVhbSw0Ni43LDE3LjksMTk1LDMzMDAsZmVtYWxlLDIwMDcNCjMwMixDaGluc3RyYXAsRHJlYW0sNTIsMTksMTk3LDQxNTAsbWFsZSwyMDA3DQozMDMsQ2hpbnN0cmFwLERyZWFtLDUwLjUsMTguNCwyMDAsMzQwMCxmZW1hbGUsMjAwOA0KMzA0LENoaW5zdHJhcCxEcmVhbSw0OS41LDE5LDIwMCwzODAwLG1hbGUsMjAwOA0KMzA1LENoaW5zdHJhcCxEcmVhbSw0Ni40LDE3LjgsMTkxLDM3MDAsZmVtYWxlLDIwMDgNCjMwNixDaGluc3RyYXAsRHJlYW0sNTIuOCwyMCwyMDUsNDU1MCxtYWxlLDIwMDgNCjMwNyxDaGluc3RyYXAsRHJlYW0sNDAuOSwxNi42LDE4NywzMjAwLGZlbWFsZSwyMDA4DQozMDgsQ2hpbnN0cmFwLERyZWFtLDU0LjIsMjAuOCwyMDEsNDMwMCxtYWxlLDIwMDgNCjMwOSxDaGluc3RyYXAsRHJlYW0sNDIuNSwxNi43LDE4NywzMzUwLGZlbWFsZSwyMDA4DQozMTAsQ2hpbnN0cmFwLERyZWFtLDUxLDE4LjgsMjAzLDQxMDAsbWFsZSwyMDA4DQozMTEsQ2hpbnN0cmFwLERyZWFtLDQ5LjcsMTguNiwxOTUsMzYwMCxtYWxlLDIwMDgNCjMxMixDaGluc3RyYXAsRHJlYW0sNDcuNSwxNi44LDE5OSwzOTAwLGZlbWFsZSwyMDA4DQozMTMsQ2hpbnN0cmFwLERyZWFtLDQ3LjYsMTguMywxOTUsMzg1MCxmZW1hbGUsMjAwOA0KMzE0LENoaW5zdHJhcCxEcmVhbSw1MiwyMC43LDIxMCw0ODAwLG1hbGUsMjAwOA0KMzE1LENoaW5zdHJhcCxEcmVhbSw0Ni45LDE2LjYsMTkyLDI3MDAsZmVtYWxlLDIwMDgNCjMxNixDaGluc3RyYXAsRHJlYW0sNTMuNSwxOS45LDIwNSw0NTAwLG1hbGUsMjAwOA0KMzE3LENoaW5zdHJhcCxEcmVhbSw0OSwxOS41LDIxMCwzOTUwLG1hbGUsMjAwOA0KMzE4LENoaW5zdHJhcCxEcmVhbSw0Ni4yLDE3LjUsMTg3LDM2NTAsZmVtYWxlLDIwMDgNCjMxOSxDaGluc3RyYXAsRHJlYW0sNTAuOSwxOS4xLDE5NiwzNTUwLG1hbGUsMjAwOA0KMzIwLENoaW5zdHJhcCxEcmVhbSw0NS41LDE3LDE5NiwzNTAwLGZlbWFsZSwyMDA4DQozMjEsQ2hpbnN0cmFwLERyZWFtLDUwLjksMTcuOSwxOTYsMzY3NSxmZW1hbGUsMjAwOQ0KMzIyLENoaW5zdHJhcCxEcmVhbSw1MC44LDE4LjUsMjAxLDQ0NTAsbWFsZSwyMDA5DQozMjMsQ2hpbnN0cmFwLERyZWFtLDUwLjEsMTcuOSwxOTAsMzQwMCxmZW1hbGUsMjAwOQ0KMzI0LENoaW5zdHJhcCxEcmVhbSw0OSwxOS42LDIxMiw0MzAwLG1hbGUsMjAwOQ0KMzI1LENoaW5zdHJhcCxEcmVhbSw1MS41LDE4LjcsMTg3LDMyNTAsbWFsZSwyMDA5DQozMjYsQ2hpbnN0cmFwLERyZWFtLDQ5LjgsMTcuMywxOTgsMzY3NSxmZW1hbGUsMjAwOQ0KMzI3LENoaW5zdHJhcCxEcmVhbSw0OC4xLDE2LjQsMTk5LDMzMjUsZmVtYWxlLDIwMDkNCjMyOCxDaGluc3RyYXAsRHJlYW0sNTEuNCwxOSwyMDEsMzk1MCxtYWxlLDIwMDkNCjMyOSxDaGluc3RyYXAsRHJlYW0sNDUuNywxNy4zLDE5MywzNjAwLGZlbWFsZSwyMDA5DQozMzAsQ2hpbnN0cmFwLERyZWFtLDUwLjcsMTkuNywyMDMsNDA1MCxtYWxlLDIwMDkNCjMzMSxDaGluc3RyYXAsRHJlYW0sNDIuNSwxNy4zLDE4NywzMzUwLGZlbWFsZSwyMDA5DQozMzIsQ2hpbnN0cmFwLERyZWFtLDUyLjIsMTguOCwxOTcsMzQ1MCxtYWxlLDIwMDkNCjMzMyxDaGluc3RyYXAsRHJlYW0sNDUuMiwxNi42LDE5MSwzMjUwLGZlbWFsZSwyMDA5DQozMzQsQ2hpbnN0cmFwLERyZWFtLDQ5LjMsMTkuOSwyMDMsNDA1MCxtYWxlLDIwMDkNCjMzNSxDaGluc3RyYXAsRHJlYW0sNTAuMiwxOC44LDIwMiwzODAwLG1hbGUsMjAwOQ0KMzM2LENoaW5zdHJhcCxEcmVhbSw0NS42LDE5LjQsMTk0LDM1MjUsZmVtYWxlLDIwMDkNCjMzNyxDaGluc3RyYXAsRHJlYW0sNTEuOSwxOS41LDIwNiwzOTUwLG1hbGUsMjAwOQ0KMzM4LENoaW5zdHJhcCxEcmVhbSw0Ni44LDE2LjUsMTg5LDM2NTAsZmVtYWxlLDIwMDkNCjMzOSxDaGluc3RyYXAsRHJlYW0sNDUuNywxNywxOTUsMzY1MCxmZW1hbGUsMjAwOQ0KMzQwLENoaW5zdHJhcCxEcmVhbSw1NS44LDE5LjgsMjA3LDQwMDAsbWFsZSwyMDA5DQozNDEsQ2hpbnN0cmFwLERyZWFtLDQzLjUsMTguMSwyMDIsMzQwMCxmZW1hbGUsMjAwOQ0KMzQyLENoaW5zdHJhcCxEcmVhbSw0OS42LDE4LjIsMTkzLDM3NzUsbWFsZSwyMDA5DQozNDMsQ2hpbnN0cmFwLERyZWFtLDUwLjgsMTksMjEwLDQxMDAsbWFsZSwyMDA5DQozNDQsQ2hpbnN0cmFwLERyZWFtLDUwLjIsMTguNywxOTgsMzc3NSxmZW1hbGUsMjAwOQ==').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'penguins.csv'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-primary downloadthis  " id="dnldts8688"><i class="bi bi-download"></i> penguins.csv </button></a></p>
+</section>
+<section id="import-data" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="import-data"><span class="header-section-number">3</span> Import data</h2>
+<ol type="1">
+<li>Click on the Menu icon: <img src="assets/jamovimenu.png" class="img-fluid" width="20"></li>
+<li>Select Open &gt; Browse, and navigate to the downloaded file.</li>
+<li>Click Open to load the data.</li>
+</ol>
+<p><a href="assets/open-file-in-jamovi.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/open-file-in-jamovi.gif" class="img-fluid"></a></p>
+</section>
+<section id="plot" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="plot"><span class="header-section-number">4</span> Plot</h2>
+<ol type="1">
+<li>Click on the <strong>Analyses</strong> tab.</li>
+<li>Select <strong>Exploration</strong> &gt; <strong>Scatterplot</strong>.</li>
+<li>Drag the variables you want to plot into the X and Y boxes. The variables should both be numerical.</li>
+<li>If you want to colour the points by a categorical variable, drag the categorical variable into the <strong>Color</strong> box.</li>
+<li>Explore the options for <strong>Regression Line</strong> and <strong>Marginals</strong> by clicking on them.</li>
+<li>Rename variables by clicking on the variable name in the <strong>Variables</strong> tab.</li>
+</ol>
+<p><a href="assets/scatterplot-jamovi.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="assets/scatterplot-jamovi.gif" class="img-fluid"></a></p>
+</section>
+<section id="export" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="export"><span class="header-section-number">5</span> Export</h2>
+<p>To export the plot, right click on the plot, select Image &gt; Export… &gt; Browse and rename the file before clicking on the Save button.</p>
+<div id="fig-jamovi-export" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-jamovi-export-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="assets/jamovi-export.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: A popup window should appear when you right click on a plot, where you can export the image. Click on the image to expand it."><img src="assets/jamovi-export.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jamovi-export-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: A popup window should appear when you right click on a plot, where you can export the image. Click on the image to expand it.
+</figcaption>
+</figure>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

@@ -92,7 +92,7 @@ The second dataset is data were collected and made available by Dr. Kristen Gorm
 2. Select **Exploration** > **Scatterplot**.
 3. Drag the variables you want to plot into the X and Y boxes. The variables should both be numerical.
 4. If you want to colour the points by a categorical variable, drag the categorical variable into the **Color** box.
-5. Explore the options for **Regression Line** and **Marginals** by clicking on them.
+5. Explore the options for **Regression Line** and **Marginals** by clicking on them. **Note**: *depending on the version of Jamovi, these options may be located in different places or will not be available. The point is that you can explore additionality fucntionality with ease.*
 6. Rename variables by clicking on the variable name in the **Variables** tab.
 
 ::: {.content-visible unless-format="pdf"}
